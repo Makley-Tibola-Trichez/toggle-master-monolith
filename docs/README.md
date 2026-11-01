@@ -11,7 +11,6 @@ Esta pasta reúne a documentação exigida pelo enunciado da Fase 1.
 | [05-arquitetura-aws.md](05-arquitetura-aws.md) | Diagrama de arquitetura (VPC, sub-redes pública e privada, EC2, RDS, Security Groups) e como as credenciais do banco são gerenciadas. |
 | [04-12-factor.md](04-12-factor.md) | Discussão 12-Factor App aplicada ao projeto. |
 | [03-monolito.md](03-monolito.md) | Por que a aplicação é um monólito, com vantagens e desvantagens para um MVP. |
-| [ToggleMaster_Relatorio_Entrega_Fase1.docx](ToggleMaster_Relatorio_Entrega_Fase1.docx) | Relatório de entrega: participantes, links, decisões e estimativa de custos. |
 
 ## Convenções
 

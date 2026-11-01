@@ -20,7 +20,7 @@ Hoje o domínio é pequeno (só flags), mas as fases seguintes do projeto prevee
 - **Simplicidade operacional**: sem rede entre serviços, sem orquestração, sem contratos entre APIs.
 - **Fácil de rodar e depurar**: `docker compose up` sobe tudo; o fluxo de uma requisição está em um único lugar.
 - **Consistência de dados simples**: uma única base, sem transações distribuídas.
-- **Custo baixo**: uma EC2 e um RDS atendem a necessidade inicial (ver a estimativa em [ToggleMaster_Relatorio_Entrega_Fase1.docx](ToggleMaster_Relatorio_Entrega_Fase1.docx)).
+- **Custo baixo**: uma EC2 e um RDS atendem a necessidade inicial (ver a [estimativa de custos](https://calculator.aws/#/estimate?id=fec0e0d5c9a4d7ba3b417f6807a0b40d1d0e6f7d)).
 
 ## Desvantagens e riscos
 
