@@ -16,14 +16,14 @@ A aplicação roda em uma única instância EC2 na sub-rede pública e acessa um
 
 | Componente | Detalhe (conforme o diagrama) |
 | :-- | :-- |
-| Região / zona | `us-east-1` (N. Virginia). O diagrama mostra a zona `us-east-1a`; a VPC foi provisionada com sub-redes em duas zonas de disponibilidade |
+| Região / zona | `us-east-1` (N. Virginia). Uma única zona de disponibilidade: `us-east-1a` |
 | VPC | `togglemaster-vpc`, `10.0.0.0/16`, criada pelo assistente "VPC e mais", com resolução de DNS e nomes de host DNS habilitados |
 | Sub-rede pública | `10.0.0.0/20`, nome `togglemaster-vpc-subnet-public-1a`; abriga a EC2. Tabela de rotas com saída pelo Internet Gateway |
 | Sub-rede privada | `10.0.128.0/20`, nome `togglemaster-vpc-subnet-private-1a`; abriga o RDS. Sem rota direta para a internet |
 | Internet Gateway | Dá acesso de entrada e saída da internet à sub-rede pública |
 | NAT Gateway / VPC Endpoints | Nenhum, para evitar custo adicional (uso do free tier) |
 | EC2 | `togglemaster-ec2-postech-fiap`, Ubuntu Server, tipo `t4g.micro` (ARM64/Graviton), EBS raiz de 8 GB gp3, IP público, chave `.pem` para SSH. Executa a aplicação (Gunicorn na porta 5000) |
-| RDS | PostgreSQL, classe `db.t4g.micro`, 20 GB gp3, Single-AZ, sem acesso público, grupo de sub-redes `togglemaster-db` (sub-redes privadas em duas zonas, exigência do RDS), porta 5432 |
+| RDS | PostgreSQL, classe `db.t4g.micro`, 20 GB gp3, Single-AZ, sem acesso público, grupo de sub-redes `togglemaster-db`, porta 5432 |
 | IAM role | `togglemaster-rds-secrets`, associada à EC2 por *instance profile*; permite ler o segredo do banco e usar a chave KMS para descriptografá-lo via Secrets Manager |
 | AWS Secrets Manager | Segredo criado pelo RDS ao habilitar o gerenciamento das credenciais master; guarda `username` e `password` |
 
